@@ -2,7 +2,7 @@ var is12Hour = (require("Storage").readJSON("setting.json",1)||{})["12hour"];
 var locale = require("locale");
 var CHARW = 34; // how tall are digits?
 var CHARP = 2; // how chunky are digits?
-var Y = 50; // start height
+var Y = 20; // start height
 // Offscreen buffer
 var buf = Graphics.createArrayBuffer(CHARW+CHARP*2,CHARW*2 + CHARP*2,1,{msb:true});
 var bufimg = {width:buf.getWidth(),height:buf.getHeight(),buffer:buf.buffer};
