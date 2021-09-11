@@ -3446,6 +3446,7 @@
   "version":"0.01",
   "description": "This is a description of my awesome timer app",
   "tags": "",
+  "readme": "README.md",
   "storage": [
     {"name":"timer.app.js","url":"app.js"},
     {"name":"timer.img","url":"app-icon.js","evaluate":true}
