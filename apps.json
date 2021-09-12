@@ -1632,6 +1632,7 @@
     "allow_emulator":true,
     "storage": [
       {"name":"numerals.app.js","url":"numerals.app.js"},
+      {"name":"press.face.js","url":"press.js"},
       {"name":"numerals.img","url":"numerals-icon.js","evaluate":true},
       {"name":"numerals.settings.js","url":"numerals.settings.js"}
     ],
