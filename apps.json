@@ -26,7 +26,6 @@
       {"name":"wecare.app.js","url":"wecare.js"},
       {"name":"big.face.js","url":"big.js"},
       {"name":"ana.face.js","url":"ana.js"},
-      {"name":"digi.face.js","url":"digi.js"},
       {"name":"wecare.img","url":"wecare-icon.js","evaluate":true}
     ]
   },
