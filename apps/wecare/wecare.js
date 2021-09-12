@@ -1,12 +1,10 @@
 var FACES = [];
 var STOR = require("Storage");
 STOR.list(/\.face\.js$/).forEach(face=>FACES.push(eval(require("Storage").read(face))));
-var lastface = STOR.readJSON("multiclock.json")||{pinned:0};
+var lastface = STOR.readJSON("wecare.json")||{pinned:0};
 var iface = lastface.pinned;
 var face = FACES[iface]();
 var intervalRefSec;
-
-//if (STOR.read("fnt36x70.js")) eval(STOR.read("fnt36x70.js"));
 
 function stopdraw() {
   if (face.kill) face.kill();
