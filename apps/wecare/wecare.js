@@ -6,6 +6,8 @@ var iface = lastface.pinned;
 var face = FACES[iface]();
 var intervalRefSec;
 
+if (STOR.read("mqtt.js")) eval(STOR.read("mqtt.js"));
+
 function stopdraw() {
   if (face.kill) face.kill();
   if(intervalRefSec) {intervalRefSec=clearInterval(intervalRefSec);}
@@ -28,9 +30,9 @@ global.SCREENACCESS = {
   },
   release:function(){
     this.withApp=true;
-    startdraw(); 
+    startdraw();
   }
-}; 
+};
 
 function setControl(){
   function newFace(inc){
@@ -44,16 +46,42 @@ function setControl(){
   function finish(){
     if (lastface.pinned!=iface){
         lastface.pinned=iface;
-        STOR.write("multiclock.json",lastface);
+        STOR.write("wecare.json",lastface);
     }
     Bangle.showLauncher();
   }
-  Bangle.on('swipe',(dir)=>{
+  Bangle.on('swipe',(dir) => {
     if (SCREENACCESS.withApp)
       newFace(dir);
   });
+  Bangle.on('lock', (on) => {
+    //Bangle.setLCDPower(!on);
+  });
+  Bangle.on('lcdPower', function(on){
+    if (on){
+      startdraw();
+    } else stopdraw();
+  });
+  /*Bangle.on('touch', () => {
+    if(iface == 0) {
+      mqtt.publish("act", "call");
+      Bangle.buzz();
+    }
+    console.log("App:",iface);
+  });*/
   setWatch(finish,BTN1,{edge:"falling"});
 }
+
+mqtt.on("cmd", function(msg){
+   E.showMessage(msg.message, msg.topic);
+});
+
+mqtt.on("hrm?", function(msg){
+   E.showMessage(msg.message, msg.topic);
+});
+
+// Show launcher when button pressed
+Bangle.setUI("clock");
 
 Bangle.loadWidgets();
 g.clear();
