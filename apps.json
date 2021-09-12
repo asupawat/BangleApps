@@ -13,6 +13,23 @@
     ],
     "sortorder" : -10
   },
+  { "id": "wecare",
+    "name": "We Care",
+    "icon": "wecare.png",
+    "version":"0.01",
+    "description": "Clock with MQTT",
+    "readme": "README.md",
+    "tags": "clock",
+    "type":"clock",
+    "allow_emulator":true,
+    "storage": [
+      {"name":"wecare.app.js","url":"wecare.js"},
+      {"name":"big.face.js","url":"big.js"},
+      {"name":"ana.face.js","url":"ana.js"},
+      {"name":"digi.face.js","url":"digi.js"},
+      {"name":"wecare.img","url":"wecare-icon.js","evaluate":true}
+    ]
+  },
   { "id": "moonphase",
     "name": "Moonphase",
     "icon": "app.png",
