@@ -5,6 +5,7 @@ var lastface = STOR.readJSON("wecare.json")||{pinned:0};
 var iface = lastface.pinned;
 var face = FACES[iface]();
 var intervalRefSec;
+var facename;
 
 if (STOR.read("mqtt.js")) eval(STOR.read("mqtt.js"));
 
@@ -62,18 +63,23 @@ function setControl(){
       startdraw();
     } else stopdraw();
   });
-  /*Bangle.on('touch', () => {
-    if(iface == 0) {
-      mqtt.publish("act", "call");
+  Bangle.on('touch', () => {
+    if(facename == "call") {
+      mqtt.publish("call", "help");
       Bangle.buzz();
     }
-    console.log("App:",iface);
-  });*/
+    console.log("App:",facename);
+  });
   setWatch(finish,BTN1,{edge:"falling"});
 }
 
-mqtt.on("cmd", function(msg){
-   E.showMessage(msg.message, msg.topic);
+mqtt.on("call", function(msg){
+  if(msg.message == "help") {
+    g.drawImage(require("Storage").read("call2.img"),25,30);
+  } else {
+    g.drawImage(require("Storage").read("call3.img"),25,30);
+    g.drawImage(require("Storage").read("nurse.img"),45,35);
+  }
 });
 
 mqtt.on("hrm?", function(msg){
