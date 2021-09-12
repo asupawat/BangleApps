@@ -1625,7 +1625,7 @@
     "name": "Numerals Clock",
     "shortName": "Numerals Clock",
     "icon": "numerals.png",
-    "version":"0.09",
+    "version":"0.10",
     "description": "A simple big numerals clock",
     "tags": "numerals,clock",
 	"type":"clock",
