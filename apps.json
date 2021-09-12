@@ -26,6 +26,7 @@
       {"name":"wecare.app.js","url":"wecare.js"},
       {"name":"big.face.js","url":"big.js"},
       {"name":"ana.face.js","url":"ana.js"},
+      {"name":"mqtt.js","url":"mqtt.js"},
       {"name":"nurse.img","url":"nurse.img"},
       {"name":"call1.img","url":"call1.img"},
       {"name":"call2.img","url":"call2.img"},
