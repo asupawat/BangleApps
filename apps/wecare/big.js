@@ -2,6 +2,8 @@
 
     function getFace(){
 
+    facename = "clock";
+
     var numerals = {
       0:[[9,1,82,1,90,9,90,92,82,100,9,100,1,92,1,9],[30,25,61,25,69,33,69,67,61,75,30,75,22,67,22,33]],
       1:[[50,1,82,1,90,9,90,92,82,100,73,100,65,92,65,27,50,27,42,19,42,9]],
@@ -19,8 +21,6 @@
     var _mCol = ["#55ff55","#ffffff","#00EFEF","#FFBF00"];
     var _rCol = 0;
     var scale = g.getWidth()/240;
-    var interval = 0;
-    const REFRESH_RATE = 10E3;
 
     var drawFuncs = {
       fill : function(poly,isHole){
@@ -80,19 +80,12 @@
       drawNum(l2[1],_mCol[_rCol],1,1,drawFunc);
     }
 
-    function setUpdateInt(set){
-      if (interval) clearInterval(interval);
-      if (set) interval=setInterval(draw, REFRESH_RATE);
-    }
-
     function onSecond(){
        var t = new Date();
        if (t.getSeconds() === 0) {
-         setUpdateInt(1);
          draw();
        }
     }
-
 
     return {init:draw, tick:onSecond};
     }
