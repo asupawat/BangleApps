@@ -26,6 +26,10 @@
       {"name":"wecare.app.js","url":"wecare.js"},
       {"name":"big.face.js","url":"big.js"},
       {"name":"ana.face.js","url":"ana.js"},
+      {"name":"nurse.img","url":"nurse.img"},
+      {"name":"call1.img","url":"call1.img"},
+      {"name":"call2.img","url":"call2.img"},
+      {"name":"call3.img","url":"call3.img"},
       {"name":"wecare.img","url":"wecare-icon.js","evaluate":true}
     ]
   },
