@@ -2,7 +2,7 @@
   function draw() {
     g.reset();
     if (NRF.getSecurityStatus().connected)
-      g.setColor("#07f");
+      g.setColor("#290");
     else
       g.setColor(g.theme.bg ? "#AAA" : "#555");
     g.drawImage(atob("CxQBBgDgFgJgR4jZMawfAcA4D4NYybEYIwTAsBwDAA=="),2+this.x,2+this.y);
